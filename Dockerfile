@@ -7,8 +7,11 @@ WORKDIR /code
 # add requirements file to image
 COPY ./requirements.txt /code/requirements.txt
 
-# install python libraries
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+# upgrade pip before installing dependencies
+RUN pip install --no-cache-dir --upgrade pip
+
+# install python libraries with higher timeout & retries
+RUN pip install --no-cache-dir --default-timeout=100 --retries=10 -r /code/requirements.txt
 
 # add python code
 COPY ./app/ /code/app/
