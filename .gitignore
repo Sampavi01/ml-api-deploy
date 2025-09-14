@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+
+# Virtual environments
+venv/
+env/
+
+# Docker
+*.log
+*.pid
+*.sqlite3
+
+# Data / models
+app/data/all-MiniLM-L6-v2/
+app/data/video-index.parquet
+
+# OS files
+.DS_Store
+Thumbs.db
